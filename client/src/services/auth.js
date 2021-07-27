@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+//This is the Client
 const signup = (username, password) => {
     return axios.post('/api/auth/signup', { username, password })
     .then(response => {
@@ -19,6 +20,29 @@ const login = (username, password) => {
         return err
     })
 }
+//This is the end of the Client
+
+//This is the Specialist
+const specialistSignup = (username, name, lastname, password) => {
+    return axios.post('/api/auth/specialist-signup', { username, name, lastname, password })
+    .then(response => {
+        return response.data
+    })
+    .catch(err => {
+        return err
+    })
+}
+
+const specialistLogin = (username, password) => {
+    return axios.post('/api/auth/specialist-login', { username, password })
+    .then(response => {
+        return response.data
+    })
+    .catch(err => {
+        return err
+    })
+}
+//This is the end of the Specialist
 
 const logout = () => {
     return axios.delete('/api/auth/logout')
@@ -30,4 +54,4 @@ const logout = () => {
     })
 }
 
-export { signup, login, logout }
+export { signup, login, logout, specialistSignup, specialistLogin }

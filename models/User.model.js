@@ -7,6 +7,25 @@ const userSchema = new Schema({
     // unique: true -> Ideally, should be unique, but its up to you
   },
   password: String,
+  name: String,
+  lastname: String,
+  avatar: String,
+  phone: String,
+  address: {
+    street: String,
+    number: String,
+    zipCode: String,
+  },
+  favorites: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Specialist'
+    }
+  ],
+  role: {
+    type: String,
+    default: 'Client'
+  }
 });
 
 const User = model("User", userSchema);

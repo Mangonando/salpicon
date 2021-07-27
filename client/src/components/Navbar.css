@@ -1,0 +1,49 @@
+nav.navbar {
+  background-color: rgba(248, 217, 41, 255);
+  padding: 15px 20px;
+  overflow: hidden;
+}
+
+/* Link is converted to a by css */
+nav.navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+nav.navbar a:hover {
+  border-bottom: 1px solid black;
+}
+
+a.logo {
+    
+}
+
+a.logo:hover {
+border: none !important;
+}
+
+.navbar-left {
+  float: left;
+}
+
+.navbar-right {
+  float: right;
+}
+
+.navbar-right a {
+  margin: 0 10px;
+}
+
+.navbar-button {
+  background-color: rgba(5, 181, 161, 255);
+  color: white !important;
+  padding: 8px 11px !important;
+  border-radius: 30px;
+}
+
+.navbar-button:hover {
+  border: none !important;
+  background-color: rgba(240, 145, 153, 255);
+  color: black !important;
+}

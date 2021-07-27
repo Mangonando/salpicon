@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { signup } from "../services/auth";
-import { Link } from "react-router-dom";
+import { specialistSignup } from "../services/auth";
 
-export default class ClientSignup extends Component {
+export default class SpecialistSignup extends Component {
   state = {
     username: "",
     password: "",
     message: "",
+    name: "",
+    lastname: "",
   };
 
   handleChange = (e) => {
@@ -18,8 +19,8 @@ export default class ClientSignup extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { username, password } = this.state;
-    signup(username, password).then((response) => {
+    const { username, name, lastname, password } = this.state;
+    specialistSignup(username, name, lastname, password).then((response) => {
       if (response.message) {
         this.setState({
           message: response.message,
@@ -28,7 +29,7 @@ export default class ClientSignup extends Component {
         });
       } else {
         this.props.setUser(response);
-        this.props.history.push("/client-dashboard");
+        this.props.history.push("/specialist-dashboard");
       }
     });
   };
@@ -36,13 +37,28 @@ export default class ClientSignup extends Component {
   render() {
     return (
       <>
-        <h2>Client Sign Up</h2>
+        <h2>Specialist Sign Up</h2>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">Username: </label>
           <input
             type="text"
             name="username"
             value={this.state.username}
+            onChange={this.handleChange}
+          />
+          {/* Adding information needed for the sign up */}
+          <label htmlFor="name">Name: </label>
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+          <label htmlFor="lastname">Last Name: </label>
+          <input
+            type="text"
+            name="lastname"
+            value={this.state.lastname}
             onChange={this.handleChange}
           />
           <label htmlFor="password">Password: </label>
@@ -52,11 +68,10 @@ export default class ClientSignup extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <button type="submit">Sign Up</button>
+          <button type="submit">Signup</button>
           {this.state.message && (
             <h3>{this.state.message}</h3>
           )}
-          <Link to="/specialist-signup">Specialist Sign Up</Link>
         </form>
       </>
     );
