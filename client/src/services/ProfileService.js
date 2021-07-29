@@ -1,25 +1,23 @@
 import axios from 'axios'
 
-const fetch = (id, role) => {
-  return axios.get('/api/profile', { id, role }
+const updateUser = (username, name, lastname, email) => {
+  return axios.put('/api/profile/user', { username, name, lastname, email })
     .then(response => {
       return response.data
     })
     .catch(error => {
       return error
     })
-  )
 }
 
-const update = (user) => {
-  return axios.put('/api/profile', { user }
+const updateSpecialist = (username, name, lastname, email, phone, bio, serviceType, servicePrice) => {
+  return axios.put('/api/profile/specialist', { username, name, lastname, email, phone, bio, serviceType, servicePrice })
     .then(response => {
       return response.data
     })
     .catch(error => {
       return error
     })
-  )
 }
 
-export { fetch, update }
+export { updateUser, updateSpecialist }

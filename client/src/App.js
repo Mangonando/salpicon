@@ -9,7 +9,9 @@ import SpecialistSignup from "./components/SpecialistSignup";
 import SpecialistLogin from "./components/SpecialistLogin";
 import SpecialistDashboard from "./components/SpecialistDashboard";
 import Homepage from "./components/Homepage";
-import Profile from "./components/Profile";
+import ClientProfile from "./components/ClientProfile";
+import SpecialistProfile from "./components/SpecialistProfile";
+
 
 class App extends React.Component {
   state = {
@@ -68,8 +70,13 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="/profile"
-          render={(props) => <Profile setUser={this.setUser} {...this.state} />}
+          path="/client-profile"
+          render={(props) => <ClientProfile user={this.state.user} setUser={this.setUser} {...props} {...this.state} />}
+        />
+        <Route
+          exact
+          path="/specialist-profile"
+          render={(props) => <SpecialistProfile user={this.state.user} setUser={this.setUser} {...props} {...this.state} />}
         />
       </div>
     );

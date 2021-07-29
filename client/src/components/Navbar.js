@@ -20,8 +20,14 @@ export default function Navbar(props) {
           {props.user ? (
             <>
               {/* {props.user.role === 'Client' ? <Link to="/" onClick={() => handleLogout()}>Client Log Out</Link>:<Link to="/" onClick={() => handleLogout()}>Specialist Log Out</Link>} */}
-              <Link to="/profile" className="navbar-button">Profile</Link>
+              { props.user.role === "Client" &&
+                <Link to="/client-profile" className="navbar-button">Profile</Link>
+              }
+              { props.user.role === "Specialist" &&
+                <Link to="/specialist-profile" className="navbar-button">Profile</Link>
+              }
               <Link to="/" onClick={() => handleLogout()}>Log Out</Link>
+              
             </>
           ) : (
             <>

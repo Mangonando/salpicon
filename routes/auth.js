@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
-const Specialist = require("../models/Specialist.model")
+const Specialist = require("../models/Specialist.model");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 
@@ -20,20 +20,13 @@ router.post("/signup", (req, res, next) => {
       const hash = bcrypt.hashSync(password, salt);
       console.log(hash);
 
-      User.create(
-        {
-          email: email,
-          username: username, 
-          password: hash,
-          avatar: '',
-          phone: '',
-          address: {
-            street: '',
-            number: '',
-            zipCode: ''
-          },
-          favorites: []
-        })
+      User.create({
+        email: email,
+        username: username,
+        password: hash,
+        name: "",
+        lastname: "",
+      })
         .then((createdUser) => {
           console.log("createdUser", createdUser);
           req.login(createdUser, (err) => {
@@ -87,17 +80,18 @@ router.post("/specialist-signup", (req, res, next) => {
       const hash = bcrypt.hashSync(password, salt);
       console.log(hash);
 
-      Specialist.create(
-        { 
-          username: username, 
-          password: hash, 
-          name: name, 
-          lastname: lastname,
-          bio: '',
-          phone: '',
-          email: email,
-          services: []
-        })
+      Specialist.create({
+        username: username,
+        password: hash,
+        name: name,
+        lastname: lastname,
+        avatar: "",
+        bio: "",
+        phone: "",
+        email: email,
+        serviceType: "",
+        servicePrice: "",
+      })
         .then((createdUser) => {
           console.log("createdUser", createdUser);
           req.login(createdUser, (err) => {
@@ -118,7 +112,7 @@ router.post("/specialist-signup", (req, res, next) => {
 });
 
 router.post("/specialist-login", (req, res, next) => {
-  console.log("specialistLogin")
+  console.log("specialistLogin");
   passport.authenticate("specialist", (err, user) => {
     if (err) {
       return res.status(400).json({ message: "Error! Please try again" });
@@ -135,22 +129,21 @@ router.post("/specialist-login", (req, res, next) => {
   })(req, res);
 });
 
-
 // End of routes for the specialist
 
-router.get('/loggedin', (req, res) => {
+router.get("/loggedin", (req, res) => {
   console.log(req.user);
   res.json(req.user);
 });
 
-router.delete('/logout', (req, res) => {
+router.delete("/logout", (req, res) => {
   req.logout();
-  res.status(200).json({ message: 'You were succesfully logged out' });
+  res.status(200).json({ message: "You were succesfully logged out" });
 });
 
-router.get('/profile', (req, res) => {
-  console.log(req.role)
-  console.log(req.id)
-})
+router.get("/profile", (req, res) => {
+  console.log(req.role);
+  console.log(req.id);
+});
 
 module.exports = router;

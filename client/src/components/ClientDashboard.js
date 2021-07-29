@@ -12,7 +12,6 @@ export default class ClientDashboard extends Component {
 
   getSpecialists = () => {
     axios.get("/api/clientFilter").then((response) => {
-      console.log("SPECIALISTS LIST", response);
       this.setState({
         specialists: response.data,
       });

@@ -1,3 +1,8 @@
 .divider {
-    border: 2px dashed rgba(5,181,161,255);
+  border: 2px dashed rgba(5, 181, 161, 255);
+}
+
+.nobullets {
+  list-style-type: none;
+
 }

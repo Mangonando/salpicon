@@ -9,12 +9,14 @@ const specialistSchema = new Schema({
   lastname: String,
   avatar: String,
   bio: String,
-  services: [
-      {
-          type: String,
-          price: Number,
-      }
-  ],
+  serviceType: String,
+  servicePrice: Number,
+  // services: [
+  //     {
+  //         type: String,
+  //         price: Number,
+  //     }
+  // ],
   phone: String,
   email:String,
   role: {
