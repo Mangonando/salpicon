@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.auth-button {
+  background-color: rgba(5, 181, 161, 255);
+  color: white;
+  padding: 8px 11px;
+  border-radius: 30px;
+  border: none !important;
+  font-weight: bold;
+}
+
+.auth-button:hover {
+  border: none;
+  background-color: rgba(240, 145, 153, 255);
+  color: black;
+}
+
+.form-setup {
+  margin-bottom: 20px;
+
+}
+
+.form-setup input {
+    padding: 5px;
+    border: none;
+    background-color: #ececec;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.form-setup label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.highlight-pink {
+  background-color: rgba(240, 145, 153, 255);
+  color: rgba(5, 1, 2, 255);
+  padding: 5px;
+  font-weight: bold;
+}
+
+.highlight-green {
+  background-color: rgba(5,181,161,255);
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.highlight-yellow {
+  background-color: rgba(248,217,41,255);
+  color: rgba(5, 1, 2, 255);
+  padding: 5px;
+  font-weight: bold;
+}
+
+.highlight-black {
+  background-color: rgba(5, 1, 2, 255);
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.highlight-white {
+  background-color: white;
+  color: rgba(5, 1, 2, 255);
+  padding: 5px;
+  font-weight: bold;
+}

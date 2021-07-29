@@ -1,0 +1,37 @@
+.position-main-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 60px;
+}
+
+.main-box {
+  background-color: rgba(5, 1, 2, 255);
+  color: white;
+  min-height: 600px;
+  position: relative;
+  top: -180px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main-box h1 {
+  padding: 0 100px;
+}
+
+.navbar-button {
+  background-color: rgba(5, 181, 161, 255);
+  color: white !important;
+  padding: 8px 11px !important;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.navbar-button:hover {
+  border: none !important;
+  background-color: rgba(240, 145, 153, 255);
+  color: black !important;
+}

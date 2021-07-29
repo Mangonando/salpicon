@@ -1,0 +1,59 @@
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .auth-container > div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background-image-cl {
+    background-image: url(/src/images/client-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .form-box {
+      /* background-color: red; */
+      padding: 30px 50px;
+  
+  }
+  
+  .form-setup {
+    margin-bottom: 20px;
+  
+  }
+  
+  .form-setup input {
+      padding: 5px;
+      border: none;
+      background-color: #ececec;
+      border-radius: 30px;
+  
+  }
+  
+  .form-setup label {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5px;
+      display: block;
+  }
+  
+  
+  .auth-button-cl {
+      background-color: rgba(5,181,161,255) !important;
+      color: white !important;
+    }
+    
+    .auth-button-cl:hover {
+      background-color: rgba(240, 145, 153, 255) !important;
+      color: black !important;
+    }

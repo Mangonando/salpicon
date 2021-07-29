@@ -1,0 +1,11 @@
+.container-filter {
+    margin: 100px;
+}
+
+.form-setup {
+    margin: auto 25%;
+}
+
+.form-setup > div {
+    margin: 30px auto;
+}

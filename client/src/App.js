@@ -8,6 +8,8 @@ import ClientDashboard from "./components/ClientDashboard";
 import SpecialistSignup from "./components/SpecialistSignup";
 import SpecialistLogin from "./components/SpecialistLogin";
 import SpecialistDashboard from "./components/SpecialistDashboard";
+import Homepage from "./components/Homepage";
+import Profile from "./components/Profile";
 
 class App extends React.Component {
   state = {
@@ -24,7 +26,8 @@ class App extends React.Component {
     return (
       <div>
         <Navbar user={this.state.user} setUser={this.setUser} />
-        <div>
+
+        <Route exact path="/" render={(props) => <Homepage />} />
         <Route
           exact
           path="/signup"
@@ -63,17 +66,14 @@ class App extends React.Component {
             <SpecialistDashboard setUser={this.setUser} {...props} />
           )}
         />
-        </div>
+        <Route
+          exact
+          path="/profile"
+          render={(props) => <Profile setUser={this.setUser} {...this.state} />}
+        />
       </div>
     );
   }
 }
 
 export default App;
-
-//Video Hero: Where should I have it?
-// {/* <div className="video-hero">
-//           <video width="100%" height="100%" autoplay loop muted>
-//             <source src="/assets/homepageVideo/pexels-c-technical-5870556.mp4" type="video/mp4" />
-//           </video>
-//         </div> */}

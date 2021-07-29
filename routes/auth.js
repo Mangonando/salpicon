@@ -7,7 +7,7 @@ const passport = require("passport");
 // Routes for the client
 
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
+  const { email, username, password } = req.body;
   console.log("hi", req.body);
 
   User.findOne({ username: username }).then((userFromDB) => {
@@ -20,7 +20,20 @@ router.post("/signup", (req, res, next) => {
       const hash = bcrypt.hashSync(password, salt);
       console.log(hash);
 
-      User.create({ username: username, password: hash })
+      User.create(
+        {
+          email: email,
+          username: username, 
+          password: hash,
+          avatar: '',
+          phone: '',
+          address: {
+            street: '',
+            number: '',
+            zipCode: ''
+          },
+          favorites: []
+        })
         .then((createdUser) => {
           console.log("createdUser", createdUser);
           req.login(createdUser, (err) => {
@@ -61,7 +74,7 @@ router.post("/login", (req, res, next) => {
 
 // Routes for the Specialist
 router.post("/specialist-signup", (req, res, next) => {
-  const { username, name, lastname, password } = req.body;
+  const { email, username, name, lastname, password } = req.body;
   console.log("hi", req.body);
 
   Specialist.findOne({ username: username }).then((userFromDB) => {
@@ -74,7 +87,17 @@ router.post("/specialist-signup", (req, res, next) => {
       const hash = bcrypt.hashSync(password, salt);
       console.log(hash);
 
-      Specialist.create({ username: username, password: hash, name: name, lastname: lastname })
+      Specialist.create(
+        { 
+          username: username, 
+          password: hash, 
+          name: name, 
+          lastname: lastname,
+          bio: '',
+          phone: '',
+          email: email,
+          services: []
+        })
         .then((createdUser) => {
           console.log("createdUser", createdUser);
           req.login(createdUser, (err) => {
@@ -124,5 +147,10 @@ router.delete('/logout', (req, res) => {
   req.logout();
   res.status(200).json({ message: 'You were succesfully logged out' });
 });
+
+router.get('/profile', (req, res) => {
+  console.log(req.role)
+  console.log(req.id)
+})
 
 module.exports = router;

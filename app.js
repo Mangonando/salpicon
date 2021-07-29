@@ -18,7 +18,10 @@ require("./config")(app);
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const DB_URL = "mongodb+srv://juansalpicon:8PW37K3-6xL@L5k@cluster0.rfrss.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const LOCAL_URL = "mongodb://localhost/salpicon"
+const ATLAS_URL = "mongodb+srv://juansalpicon:8PW37K3-6xL@L5k@cluster0.rfrss.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const DB_URL = ATLAS_URL;
+// ATLAS_URL
 
 app.use(
   session({
@@ -116,6 +119,9 @@ app.use("/", index);
 
 const auth = require("./routes/auth");
 app.use("/api/auth", auth);
+
+const clientFilter = require("./routes/clientFilter");
+app.use("/api/clientFilter", clientFilter);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 //This is the Client
-const signup = (username, password) => {
-    return axios.post('/api/auth/signup', { username, password })
+const signup = (email, username, password) => {
+    return axios.post('/api/auth/signup', { email, username, password })
     .then(response => {
         return response.data
     })
@@ -23,8 +23,8 @@ const login = (username, password) => {
 //This is the end of the Client
 
 //This is the Specialist
-const specialistSignup = (username, name, lastname, password) => {
-    return axios.post('/api/auth/specialist-signup', { username, name, lastname, password })
+const specialistSignup = (email, username, name, lastname, password) => {
+    return axios.post('/api/auth/specialist-signup', { email, username, name, lastname, password })
     .then(response => {
         return response.data
     })
