@@ -30,7 +30,10 @@ export default class ClientDashboard extends Component {
     return (
       <div className="container-filter">
         <ClientSearchFilter query={this.state.query} setQuery={this.setQuery} />
-        <SpecialistsList query={this.state.query} specialists={this.state.specialists} />
+        <SpecialistsList
+          query={this.state.query}
+          specialists={this.state.specialists}
+        />
       </div>
     );
   }

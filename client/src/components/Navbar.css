@@ -17,7 +17,7 @@ nav.navbar a:hover {
 }
 
 a.logo:hover {
-border: none !important;
+  border: none !important;
 }
 
 .navbar-left {

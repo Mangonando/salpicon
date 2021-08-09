@@ -24,17 +24,24 @@ export default class Homepage extends Component {
         <div className="position-main-box">
           <div className="main-box">
             <h1>
-            Get the<span className="highlight-yellow">best</span> {" "} manicures and pedicures at your {" "}
+              Get the<span className="highlight-yellow">best</span> manicures
+              and pedicures at your{" "}
               <span className="highlight-pink">place</span>
-              <h2>Stop scrolling and <Link to="/signup" className="navbar-button">Sign Up</Link></h2>
-              <h6>{" "}
-              <span className="highlight-white">By.</span> {" "}
-              <span className="highlight-white">Juan</span> {" "}
-              <span className="highlight-white">Ramirez</span></h6>
+              <h2>
+                Stop scrolling and{" "}
+                <Link to="/signup" className="navbar-button">
+                  Sign Up
+                </Link>
+              </h2>
+              <h6>
+                {" "}
+                <span className="highlight-white">By.</span>{" "}
+                <span className="highlight-white">Juan</span>{" "}
+                <span className="highlight-white">Ramirez</span>
+              </h6>
             </h1>
           </div>
         </div>
-        
       </div>
     );
   }

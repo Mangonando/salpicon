@@ -63,7 +63,9 @@ export default class ClientLogin extends Component {
                 </div>
               </div>
               <div>
-                <button type="submit" className="auth-button auth-button-cl">Login</button>
+                <button type="submit" className="auth-button auth-button-cl">
+                  Login
+                </button>
                 {this.state.message && <h4>{this.state.message}</h4>}
               </div>
               <p>

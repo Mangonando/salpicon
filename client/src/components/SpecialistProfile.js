@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { updateSpecialist } from "../services/ProfileService";
 import axios from "axios";
 
 export default class SpecialistProfile extends Component {

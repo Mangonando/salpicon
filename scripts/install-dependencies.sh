@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 echo "Installing backend dependencies..."
 npm install
 

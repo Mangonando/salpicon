@@ -67,7 +67,9 @@ export default class SpecialistLogin extends Component {
               </div>
 
               <div>
-                <button type="submit" className="auth-button auth-button-sl">Login</button>
+                <button type="submit" className="auth-button auth-button-sl">
+                  Login
+                </button>
                 {this.state.message && <h4>{this.state.message}</h4>}
               </div>
             </form>

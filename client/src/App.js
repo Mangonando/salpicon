@@ -12,7 +12,6 @@ import Homepage from "./components/Homepage";
 import ClientProfile from "./components/ClientProfile";
 import SpecialistProfile from "./components/SpecialistProfile";
 
-
 class App extends React.Component {
   state = {
     user: this.props.user,
@@ -71,12 +70,26 @@ class App extends React.Component {
         <Route
           exact
           path="/client-profile"
-          render={(props) => <ClientProfile user={this.state.user} setUser={this.setUser} {...props} {...this.state} />}
+          render={(props) => (
+            <ClientProfile
+              user={this.state.user}
+              setUser={this.setUser}
+              {...props}
+              {...this.state}
+            />
+          )}
         />
         <Route
           exact
           path="/specialist-profile"
-          render={(props) => <SpecialistProfile user={this.state.user} setUser={this.setUser} {...props} {...this.state} />}
+          render={(props) => (
+            <SpecialistProfile
+              user={this.state.user}
+              setUser={this.setUser}
+              {...props}
+              {...this.state}
+            />
+          )}
         />
       </div>
     );
