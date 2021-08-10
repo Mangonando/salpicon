@@ -26,4 +26,4 @@ Salpicon's goal is to be a beautiful, clean,and efficient web app which is ready
 ## Try [Salpicon](http://salpicon.herokuapp.com/) now!
 
 <br>
-<b>Enjoy iy<b>
+<b>Enjoy it!<b>
