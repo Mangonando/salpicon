@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default class Homepage extends Component {
   render() {
     window.onload = () => {
-      const video = document.querySelector(".video-hero video");
+      const video = document.querySelector(".video-hero");
       if (video) {
         video.play();
       }
