@@ -8,7 +8,6 @@ const passport = require("passport");
 
 router.post("/signup", (req, res, next) => {
   const { email, username, password } = req.body;
-  console.log("hi", req.body);
 
   User.findOne({ username: username }).then((userFromDB) => {
     if (userFromDB !== null) {
@@ -18,7 +17,6 @@ router.post("/signup", (req, res, next) => {
     } else {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-      console.log(hash);
 
       User.create({
         email: email,
@@ -28,7 +26,6 @@ router.post("/signup", (req, res, next) => {
         lastname: "",
       })
         .then((createdUser) => {
-          console.log("createdUser", createdUser);
           req.login(createdUser, (err) => {
             if (err) {
               return res
